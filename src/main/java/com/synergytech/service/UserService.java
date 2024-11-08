@@ -1,6 +1,7 @@
 package com.synergytech.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,21 @@ public class UserService {
 		List<User> users = userRepository.findAll();
 		return users;
 	}
-
+	
+	public Optional<User> getUserById(Long id){
+		 return userRepository.findById(id);
+	}
+	
+	public void deleteUser(Long id) {
+		userRepository.deleteById(id);
+	}
 }
+
+
+
+
+
+
+
+
+
